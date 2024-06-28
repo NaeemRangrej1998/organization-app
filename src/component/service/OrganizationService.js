@@ -2,7 +2,7 @@ import axios from "axios";
 
 class OrganizationService{
     static BASE_URL = "http://localhost:8080/organization"
-     getAllUsers(pageNo = 1, pageSize = 10) {
+    getAllOrganization(pageNo = 1, pageSize = 10) {
         try {
             return  axios.get(`${OrganizationService.BASE_URL}/getAllUsers`, {
                 params: {
@@ -19,11 +19,15 @@ class OrganizationService{
     updateOrganization = (id,data) => {
         return axios.put(`${OrganizationService.BASE_URL}/updateOrgnanization/${id}`, data);
     };
-    createEmployee = (data) => {
+    createOrganization = (data) => {
         return axios.post(`${OrganizationService.BASE_URL}/addOranization`, data);
     };
     fetchOrganizationById = (id) => {
         return axios.get(`${OrganizationService.BASE_URL}/${id}`);
+    };
+
+    deleteOrganizationById = (id) => {
+        return axios.delete(`${OrganizationService.BASE_URL}/${id}`);
     };
 
 

@@ -10,7 +10,7 @@ const AddOrganization = () => {
     const navigate=useNavigate();
     const formSubmit = async (data) => {
         try {
-            const response = await OrganizationService.createEmployee(data);
+            const response = await OrganizationService.createOrganization(data);
             setTimeout(() => {
                 navigate('/organization')
             }, 2000);
